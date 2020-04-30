@@ -2,11 +2,22 @@
 
 [![Gem Version](https://badge.fury.io/rb/binance.svg)](https://badge.fury.io/rb/binance) 
 
+[NEW] I tried to implement a reconnect mechanishm without reseting the instance variables
+
+Refs:
+
+[1] [faye ws](https://github.com/faye/faye-websocket-ruby/blob/master/lib/faye/websocket/client.rb)
+
+[2] [reconnect snippet](https://github.com/imanel/websocket-eventmachine-client/issues/14)
+
+[3] [post_init](https://github.com/eventmachine/eventmachine/blob/681bc4e995a3c860d08a22c48723eef2b7719ae4/lib/em/connection.rb)
+
 This is an unofficial Ruby wrapper for the Binance exchange REST and WebSocket APIs.
 
 ##### Notice
 
 We are now at 1.0 and there are breaking changes, mainly with some method names and the casing of keys. Be sure to check out the code while I work on better documentation.
+
 
 ## Installation
 
