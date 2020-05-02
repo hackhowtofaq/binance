@@ -1,3 +1,15 @@
+## v1.2.4 (2020-05-02)
+
+*  Add CHANGELOG.md [View](https://github.com/hackhowtofaq/binance/commit/5e2ff7aaaa2107fb2d21d08c3595bbd6010b31cf)
+*  Update [View](https://github.com/hackhowtofaq/binance/commit/70b50d1f94b38959f7d3fa11608f29de57156e01)
+*  Update README [View](https://github.com/hackhowtofaq/binance/commit/15b862b633e836a88f5ca6bc4f5871bef2489a7d)
+*  CHANGELOG generator [View](https://github.com/hackhowtofaq/binance/commit/048637c9c55df03973d1f66dda5231f6f924cb35)
+*  MD again [View](https://github.com/hackhowtofaq/binance/commit/8e4e01a457b108402db22e54fe360694c4e917e6)
+*  Update CHANGELOG generator + CHANGELOG [View](https://github.com/hackhowtofaq/binance/commit/b82dd5528c1f07504d6b6576fc7143ae504e5af0)
+*  CHANGELOG link [View](https://github.com/hackhowtofaq/binance/commit/6424b7ac9c933a382d3188afe340e0627bb4dd79)
+*  Update websocket gem [View](https://github.com/hackhowtofaq/binance/commit/a4d6a71717abd4e87cf017e12b6b3dcf4c68994c)
+
+
 ## v1.2.3 (2020-05-02)
 
 *  OCO order [View](https://github.com/hackhowtofaq/binance/commit/b480e5dcbff9683ac09627aa8b9b08b2ddd2adeb)

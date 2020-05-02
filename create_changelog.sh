@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 COMMITS_URL="https://github.com/hackhowtofaq/binance/commit"
+git push --tags
 
 previous_tag=0
 for current_tag in $(git tag --sort=-creatordate)
