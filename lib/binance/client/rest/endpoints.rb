@@ -17,6 +17,7 @@ module Binance
 
         # Account API Endpoints
         order:            'v3/order',
+        oco_order:        'v3/order/oco',
         test_order:       'v3/order/test',
         open_orders:      'v3/openOrders',
         all_orders:       'v3/allOrders',

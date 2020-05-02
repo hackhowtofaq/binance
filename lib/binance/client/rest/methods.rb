@@ -44,6 +44,9 @@ module Binance
         # #create_order!
         { name: :create_order!, client: :signed,
           action: :post, endpoint: :order },
+        # #create_oco_order!
+        { name: :create_oco_order!, client: :signed,
+          action: :post, endpoint: :oco_order },
         # #create_test_order
         { name: :create_test_order, client: :signed,
           action: :post, endpoint: :test_order },
