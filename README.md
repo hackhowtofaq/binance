@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/binance.svg)](https://badge.fury.io/rb/binance) 
 
-Please check [CHANGELOG.txt](https://github.com/hackhowtofaq/binance/blob/master/CHANGELOG.txt) for more info
+Please check [CHANGELOG](https://github.com/hackhowtofaq/binance/blob/master/CHANGELOG.md) for more info
 
 [NEW] I tried to implement a reconnect mechanishm without reseting the instance variables
 
