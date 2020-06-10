@@ -212,15 +212,18 @@ module Binance
           ws.on(key) { |event| 
             method.call(event) 
 
+              endpoint = URI.parse(url)
               puts "!!! ================"
               puts "Reconnect data"
               puts "key:    #{key} #{key.class}"
               puts "method: #{method} #{method.class}"
               puts "event:  #{event} #{event.class}"
-              puts "#{URI.parse(url)}"
+              puts "event:  #{event.type} #{event.type.class}"
+              puts "#{endpoint.host} #{endpoint.port}"
+              puts "#{ws}"
               puts "!!! ================"
 
-            if event == :close
+            if event.type == "close"
               # Debug 
               puts "!!! ================"
               puts "Reconnect test"
