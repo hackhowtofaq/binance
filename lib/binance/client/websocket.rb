@@ -212,6 +212,14 @@ module Binance
           ws.on(key) { |event| 
             method.call(event) 
 
+              puts "!!! ================"
+              puts "Reconnect data"
+              puts "key:    #{key} #{key.class}"
+              puts "method: #{method} #{method.class}"
+              puts "event:  #{event} #{event.class}"
+              puts "#{URI.parse(url)}"
+              puts "!!! ================"
+
             if event == :close
               # Debug 
               puts "!!! ================"
