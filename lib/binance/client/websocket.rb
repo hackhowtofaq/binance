@@ -223,7 +223,7 @@ module Binance
               puts "event:  #{event} #{event.class}"
               puts "event:  #{event.type} #{event.type.class}"
               puts "#{endpoint.host} #{endpoint.port}"
-              puts "#{ws}"
+              #puts "#{ws}"
 
               puts "!!! ================"
               # Debug 
@@ -231,7 +231,7 @@ module Binance
               puts "Reconnect test"
               puts "!!! ================"
               puts url
-              puts EventMachine::reconnect(endpoint.host, endpoint.port, self)
+              #puts EventMachine::reconnect(endpoint.host, endpoint.port, self)
 
               # ws.post_init
             end
