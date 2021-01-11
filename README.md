@@ -194,10 +194,12 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/hackho
 
 To the moon? Buy me a LAMBO
 
+```
         BTC: 1GsYWvqWHcdFxDy4iNnwCYG6PUL9QnGoya
 BTC(SegWit): bc1qa4qez4rqrj8kjrx6tztmpwtuu428udsswa4u6l
         ETH: 0xd9a729fbc1606631905b8d8fd7986e84b0dd8fc6
       THETA: 0xd9a729fbc1606631905b8d8fd7986e84b0dd8fc6
+```
 
 ## License
 
