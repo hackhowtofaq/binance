@@ -102,7 +102,11 @@ module Binance
           action: :get, endpoint: :withdraw_fee },
         # dust_log
         { name: :dust_log, client: :withdraw,
-          action: :get, endpoint: :dust_log }
+          action: :get, endpoint: :dust_log },
+
+        # futures
+        { name: :globalLongShortAccountRatio, client: :verified,
+          action: :get, endpoint: :globalLongShortAccountRatio }
       ].freeze
     end
   end
