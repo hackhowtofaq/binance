@@ -1,10 +1,9 @@
 # Binance
 
-[![Gem Version](https://badge.fury.io/rb/binance.svg)](https://badge.fury.io/rb/binance) 
 
 Please check [CHANGELOG](https://github.com/hackhowtofaq/binance/blob/master/CHANGELOG.md) for more info
 
-[2021-] Add futures API
+[2021 - ] Add futures API (WIP)
 
 [NEW] I tried to implement a reconnect mechanishm without reseting the instance variables
 
@@ -54,7 +53,7 @@ Or install it yourself as:
   * Runs on EventMachine
 
 #### Planned
-
+* Futures API (WIP)
 * Exception handling with responses
 * High level abstraction
 
