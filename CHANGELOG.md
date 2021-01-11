@@ -1,3 +1,16 @@
+## v1.3.0 (2021-01-11)
+
+*  CHANGELOG again [View](https://github.com/hackhowtofaq/binance/commit/fcedc19bf3ed805a70878682357b4160b8a5e995)
+*  Add debug prints [View](https://github.com/hackhowtofaq/binance/commit/13e6f129ad28b72d7f458155731baaf6459af082)
+*  Pass correct type on event [View](https://github.com/hackhowtofaq/binance/commit/08506abcc8dab92f3205d5d5c1e0d84f492ab7ac)
+*  Move debug in if [View](https://github.com/hackhowtofaq/binance/commit/2aceff18cb6b0e453d3eea3ccb34e8da8e3f24dd)
+*  ws -> selft [View](https://github.com/hackhowtofaq/binance/commit/efab67f004f93b51ce983f00dcdc605b12b8cb46)
+*  Update websocket.rb [View](https://github.com/hackhowtofaq/binance/commit/19674174e2e845dd4fc71d5f8035d222e8eda05e)
+*  Initial futures api support [View](https://github.com/hackhowtofaq/binance/commit/e0f9f4c593c8d9a83591ff9095767969ae6f5f82)
+*  Version up [View](https://github.com/hackhowtofaq/binance/commit/ecabf989127f1cb5702a408b841cc43f68472f30)
+*  Update README [View](https://github.com/hackhowtofaq/binance/commit/24a4021959535f7d4563f637d68296c6328c0d2e)
+
+
 ## v1.2.4 (2020-05-02)
 
 *  Add CHANGELOG.md [View](https://github.com/hackhowtofaq/binance/commit/5e2ff7aaaa2107fb2d21d08c3595bbd6010b31cf)
