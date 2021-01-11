@@ -4,6 +4,8 @@
 
 Please check [CHANGELOG](https://github.com/hackhowtofaq/binance/blob/master/CHANGELOG.md) for more info
 
+[2021-] Add futures API
+
 [NEW] I tried to implement a reconnect mechanishm without reseting the instance variables
 
 Refs:
