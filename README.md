@@ -191,6 +191,8 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/hackho
 
 ## Buy me a LAMBO
 
+Use [Binance](https://www.binance.com/en/register?ref=28753266)
+
 To the moon? Buy me a LAMBO
 
 ```
