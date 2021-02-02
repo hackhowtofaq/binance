@@ -80,33 +80,27 @@ module Binance
 
         # Withdraw API Methods
         # #withdraw!
-        { name: :withdraw!, client: :withdraw,
-          action: :post, endpoint: :withdraw },
+        { name: :withdraw!, client: :withdraw, action: :post, endpoint: :withdraw },
         # #deposit_history
-        { name: :deposit_history, client: :withdraw,
-          action: :get, endpoint: :deposit_history },
+        { name: :deposit_history, client: :withdraw, action: :get, endpoint: :deposit_history },
         # #withdraw_history
-        { name: :withdraw_history, client: :withdraw,
-          action: :get, endpoint: :withdraw_history },
+        { name: :withdraw_history, client: :withdraw, action: :get, endpoint: :withdraw_history },
         # #deposit_address
-        { name: :deposit_address, client: :withdraw,
-          action: :get, endpoint: :deposit_address },
+        { name: :deposit_address, client: :withdraw, action: :get, endpoint: :deposit_address },
         # #account_status
-        { name: :account_status, client: :withdraw,
-          action: :get, endpoint: :account_status },
+        { name: :account_status, client: :withdraw, action: :get, endpoint: :account_status },
         # #system_status
-        { name: :system_status, client: :public_withdraw,
-          action: :get, endpoint: :system_status },
+        { name: :system_status, client: :public_withdraw, action: :get, endpoint: :system_status },
         # #withdraw_fee
-        { name: :withdraw_fee, client: :withdraw,
-          action: :get, endpoint: :withdraw_fee },
+        { name: :withdraw_fee, client: :withdraw, action: :get, endpoint: :withdraw_fee },
         # dust_log
-        { name: :dust_log, client: :withdraw,
-          action: :get, endpoint: :dust_log },
+        { name: :dust_log, client: :withdraw, action: :get, endpoint: :dust_log },
 
         # futures
-        { name: :globalLongShortAccountRatio, client: :verified,
-          action: :get, endpoint: :globalLongShortAccountRatio }
+        { name: :fapiExchangeInfo, client: :public, action: :get, endpoint: :fapiExchangeInfo },
+        { name: :fapiOpenInterestHist, client: :verified, action: :get, endpoint: :fapiOpenInterestHist },
+        { name: :fapiTopLongShortPositionRatio, client: :verified, action: :get, endpoint: :fapiTopLongShortPositionRatio },
+        { name: :fapiGlobalLongShortAccountRatio, client: :verified, action: :get, endpoint: :fapiGlobalLongShortAccountRatio }
       ].freeze
     end
   end
