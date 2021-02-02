@@ -36,7 +36,7 @@ module Binance
         dust_log:                        'v3/userAssetDribbletLog.html',
 
         # Futures API
-        fapiExchangeInfo:                'v1/exchangeInfo',
+        fapiExchangeInfo:                'fapi/v1/exchangeInfo',
         fapiOpenInterestHist:            'futures/data/openInterestHist',
         fapiTopLongShortPositionRatio:   'futures/data/topLongShortPositionRatio',
         fapiGlobalLongShortAccountRatio: 'futures/data/globalLongShortAccountRatio'
