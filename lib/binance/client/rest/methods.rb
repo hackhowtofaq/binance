@@ -100,7 +100,12 @@ module Binance
         { name: :fapiExchangeInfo, client: :public, action: :get, endpoint: :fapiExchangeInfo },
         { name: :fapiOpenInterestHist, client: :verified, action: :get, endpoint: :fapiOpenInterestHist },
         { name: :fapiTopLongShortPositionRatio, client: :verified, action: :get, endpoint: :fapiTopLongShortPositionRatio },
-        { name: :fapiGlobalLongShortAccountRatio, client: :verified, action: :get, endpoint: :fapiGlobalLongShortAccountRatio }
+        { name: :fapiGlobalLongShortAccountRatio, client: :verified, action: :get, endpoint: :fapiGlobalLongShortAccountRatio },
+
+        { name: :fapiOrder, client: :verified, action: :post, endpoint: :fapiOrder },
+        { name: :fapiCancelOrder, client: :verified, action: :delete, endpoint: :fapiOrder },
+        { name: :fapiLeverage, client: :verified, action: :post, endpoint: :fapiLeverage },
+        { name: :fapiMarginType, client: :verified, action: :post, endpoint: :fapiMarginType }
       ].freeze
     end
   end

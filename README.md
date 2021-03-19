@@ -1,11 +1,13 @@
 # Binance
 
+[Binance Futures API Documentation](https://binance-docs.github.io/apidocs/futures/en/#change-log)
+
 
 Please check [CHANGELOG](https://github.com/hackhowtofaq/binance/blob/master/CHANGELOG.md) for more info
 
 [2021 - ] Add futures API (WIP)
 
-[NEW] I tried to implement a reconnect mechanishm without reseting the instance variables
+[NEW] I tried to implement a reconnect mechanism without resetting the instance variables
 
 Refs:
 
@@ -57,7 +59,7 @@ Or install it yourself as:
 * Exception handling with responses
 * High level abstraction
 
-## Getting Started
+## Getting Started SPOT trading
 
 #### REST Client
 
@@ -181,9 +183,13 @@ EM.run do
 end
 ```
 
-## Development
+---
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+## Getting Started Futures trading
+#### Rest Client 
+
+
+
 
 ## Contributing
 
