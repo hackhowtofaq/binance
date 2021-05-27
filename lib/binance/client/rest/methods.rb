@@ -105,7 +105,10 @@ module Binance
         { name: :fapiOrder, client: :verified, action: :post, endpoint: :fapiOrder },
         { name: :fapiCancelOrder, client: :verified, action: :delete, endpoint: :fapiOrder },
         { name: :fapiLeverage, client: :verified, action: :post, endpoint: :fapiLeverage },
-        { name: :fapiMarginType, client: :verified, action: :post, endpoint: :fapiMarginType }
+        { name: :fapiMarginType, client: :verified, action: :post, endpoint: :fapiMarginType },
+        { name: :fapiMarkPriceKlines, client: :verified, action: :get, endpoint: :fapiMarkPriceKlines },
+        { name: :fapiIndexPriceKlines, client: :verified, action: :get, endpoint: :fapiIndexPriceKlines },
+        { name: :fapiContinuousKlines, client: :verified, action: :get, endpoint: :fapiContinuousKlines }
       ].freeze
     end
   end

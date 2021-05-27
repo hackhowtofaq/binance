@@ -42,10 +42,13 @@ module Binance
         fapiGlobalLongShortAccountRatio: 'futures/data/globalLongShortAccountRatio',
 
         # Futures Order
-        fapiOrder:                       'fapi/v1/order', # POST
-        fapiCancelOrder:                 'fapi/v1/order', # DELETE
-        fapiLeverage:                    'fapi/v1/leverage', # POST
-        fapiMarginType:                  'fapi/v1/marginType'  # POST
+        fapiOrder:                       'fapi/v1/order',          # POST
+        fapiCancelOrder:                 'fapi/v1/order',          # DELETE
+        fapiLeverage:                    'fapi/v1/leverage',       # POST
+        fapiMarginType:                  'fapi/v1/marginType',     # POST
+        fapiMarkPriceKlines:             'fapi/v1/markPriceKlines', # GET
+        fapiIndexPriceKlines:            'fapi/v1/indexPriceKlines',
+        fapiContinuousKlines:            'fapi/v1/continuousKlines'
 
 
       }.freeze
