@@ -9,8 +9,9 @@ require_relative 'rest/methods'
 module Binance
   module Client
     class REST
-      BASE_URL = 'https://api.binance.com'.freeze
+      BASE_URL    = 'https://api.binance.com'.freeze
       FUTURES_URL = 'https://fapi.binance.com'.freeze
+      # FUTURES_URL = "https://testnet.binancefuture.com".freeze
 
       def initialize(
         api_key: '',
@@ -19,11 +20,11 @@ module Binance
         futures: false
       )
 
-        @clients = {}
-        @clients[:public] = public_client adapter, futures
-        @clients[:verified] = verified_client api_key, adapter, futures
-        @clients[:signed]   = signed_client api_key, secret_key, adapter, futures
-        @clients[:withdraw] = withdraw_client api_key, secret_key, adapter
+        @clients                   = {}
+        @clients[:public]          = public_client adapter, futures
+        @clients[:verified]        = verified_client api_key, adapter, futures
+        @clients[:signed]          = signed_client api_key, secret_key, adapter, futures
+        @clients[:withdraw]        = withdraw_client api_key, secret_key, adapter
         @clients[:public_withdraw] = public_withdraw_client adapter
       end
 

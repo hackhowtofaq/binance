@@ -48,6 +48,7 @@ module Binance
         fapiMarginType:                  'fapi/v1/marginType',     # POST
         fapiMarkPriceKlines:             'fapi/v1/markPriceKlines', # GET
         fapiIndexPriceKlines:            'fapi/v1/indexPriceKlines',
+        fapiKlines:                      'fapi/v1/klines',
         fapiContinuousKlines:            'fapi/v1/continuousKlines'
 
 
