@@ -3,9 +3,7 @@ require 'faraday_middleware'
 module Binance
   module Client
     class REST
-      def public_client(adapter, futures = false)
-        base_url = futures ? FUTURES_URL : "#{BASE_URL}/api"
-
+      def public_client(adapter, base_url)
         Faraday.new(url: base_url) do |conn|
           conn.request :json
           conn.response :json, content_type: /\bjson$/
@@ -13,9 +11,7 @@ module Binance
         end
       end
 
-      def verified_client(api_key, adapter, futures = false)
-        base_url = futures ? FUTURES_URL : "#{BASE_URL}/api"
-
+      def verified_client(api_key, adapter, base_url)
         Faraday.new(url: base_url) do |conn|
           conn.response :json, content_type: /\bjson$/
           conn.headers['X-MBX-APIKEY'] = api_key
@@ -23,8 +19,7 @@ module Binance
         end
       end
 
-      def signed_client(api_key, secret_key, adapter, futures = false)
-        base_url = futures ? FUTURES_URL : "#{BASE_URL}/api"
+      def signed_client(api_key, secret_key, adapter, base_url)
 
         Faraday.new(url: base_url) do |conn|
           conn.request :json

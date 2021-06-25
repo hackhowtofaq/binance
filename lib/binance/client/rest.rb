@@ -9,21 +9,33 @@ require_relative 'rest/methods'
 module Binance
   module Client
     class REST
-      BASE_URL    = 'https://api.binance.com'.freeze
-      FUTURES_URL = 'https://fapi.binance.com'.freeze
-      # FUTURES_URL = "https://testnet.binancefuture.com".freeze
 
       def initialize(
         api_key: '',
         secret_key: '',
         adapter: Faraday.default_adapter,
-        futures: false
+        futures: false,
+        futures_testnet: false
       )
 
+        spot_url            = 'https://api.binance.com'.freeze
+        futures_url         = 'https://fapi.binance.com'.freeze
+        testnet_futures_url = "https://testnet.binancefuture.com".freeze
+
+        base_url = if futures
+                     if futures_testnet
+                       testnet_futures_url
+                     else
+                       futures_url
+                     end
+                   else
+                     spot_url
+                   end
+
         @clients                   = {}
-        @clients[:public]          = public_client adapter, futures
-        @clients[:verified]        = verified_client api_key, adapter, futures
-        @clients[:signed]          = signed_client api_key, secret_key, adapter, futures
+        @clients[:public]          = public_client adapter, base_url
+        @clients[:verified]        = verified_client api_key, adapter, base_url
+        @clients[:signed]          = signed_client api_key, secret_key, adapter, base_url
         @clients[:withdraw]        = withdraw_client api_key, secret_key, adapter
         @clients[:public_withdraw] = public_withdraw_client adapter
       end
