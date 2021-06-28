@@ -31,16 +31,16 @@ module Binance
         end
       end
 
-      def public_withdraw_client(adapter)
-        Faraday.new(url: "#{BASE_URL}/wapi") do |conn|
+      def public_withdraw_client(adapter, base_url)
+        Faraday.new(url: "#{base_url}/wapi") do |conn|
           conn.request :json
           conn.response :json, content_type: /\bjson$/
           conn.adapter adapter
         end
       end
 
-      def withdraw_client(api_key, secret_key, adapter)
-        Faraday.new(url: "#{BASE_URL}/wapi") do |conn|
+      def withdraw_client(api_key, secret_key, adapter, base_url)
+        Faraday.new(url: "#{base_url}/wapi") do |conn|
           conn.request :url_encoded
           conn.response :json, content_type: /\bjson$/
           conn.headers['X-MBX-APIKEY'] = api_key

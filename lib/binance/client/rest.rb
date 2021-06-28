@@ -36,8 +36,8 @@ module Binance
         @clients[:public]          = public_client adapter, base_url
         @clients[:verified]        = verified_client api_key, adapter, base_url
         @clients[:signed]          = signed_client api_key, secret_key, adapter, base_url
-        @clients[:withdraw]        = withdraw_client api_key, secret_key, adapter
-        @clients[:public_withdraw] = public_withdraw_client adapter
+        @clients[:withdraw]        = withdraw_client api_key, secret_key, adapter, base_url
+        @clients[:public_withdraw] = public_withdraw_client adapter, base_url
       end
 
       METHODS.each do |method|
