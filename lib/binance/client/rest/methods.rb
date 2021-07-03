@@ -103,7 +103,15 @@ module Binance
         { name: :fapiGlobalLongShortAccountRatio, client: :verified, action: :get, endpoint: :fapiGlobalLongShortAccountRatio },
 
         { name: :fapiOrder, client: :signed, action: :post, endpoint: :fapiOrder },
-        { name: :fapiCancelOrder, client: :verified, action: :delete, endpoint: :fapiOrder },
+        { name: :fapiQueryOrder, client: :signed, action: :get, endpoint: :fapiQueryOrder },
+        { name: :fapiCancelOrder, client: :signed, action: :delete, endpoint: :fapiCancelOrder },
+        { name: :fapiCancelAllOpenOrders, client: :signed, action: :delete, endpoint: :fapiCancelAllOpenOrders },
+        { name: :fapiPositionRisk, client: :signed, action: :get, endpoint: :fapiPositionRisk },
+        { name: :fapiBalance, client: :signed, action: :get, endpoint: :fapiBalance },
+        { name: :fapiAccount, client: :signed, action: :get, endpoint: :fapiAccount },
+        { name: :fapiOpenOrders, client: :signed, action: :get, endpoint: :fapiOpenOrders },
+        { name: :fapiAllOrders, client: :signed, action: :get, endpoint: :fapiAllOrders },
+
         { name: :fapiLeverage, client: :verified, action: :post, endpoint: :fapiLeverage },
         { name: :fapiMarginType, client: :verified, action: :post, endpoint: :fapiMarginType },
         { name: :fapiMarkPriceKlines, client: :verified, action: :get, endpoint: :fapiMarkPriceKlines },

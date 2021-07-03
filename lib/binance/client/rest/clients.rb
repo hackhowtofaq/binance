@@ -20,7 +20,6 @@ module Binance
       end
 
       def signed_client(api_key, secret_key, adapter, base_url)
-
         Faraday.new(url: base_url) do |conn|
           conn.request :json
           conn.response :json, content_type: /\bjson$/

@@ -43,7 +43,15 @@ module Binance
 
         # Futures Order
         fapiOrder:                       'fapi/v1/order',          # POST
+        fapiQueryOrder:                  'fapi/v1/order',          # GET
         fapiCancelOrder:                 'fapi/v1/order',          # DELETE
+        fapiCancelAllOpenOrders:         'fapi/v1/allOpenOrders',  # DELETE   
+        fapiPositionRisk:                'fapi/v2/positionRisk',   # GET
+        fapiBalance:                     'fapi/v2/balance',        # GET
+        fapiAccount:                     'fapi/v2/account',        # GET
+        fapiOpenOrders:                  'fapi/v1/openOrders', # GET
+        fapiAllOrders:                   'fapi/v1/allOrders', # GET
+
         fapiLeverage:                    'fapi/v1/leverage',       # POST
         fapiMarginType:                  'fapi/v1/marginType',     # POST
         fapiMarkPriceKlines:             'fapi/v1/markPriceKlines', # GET
