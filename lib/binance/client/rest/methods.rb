@@ -66,17 +66,13 @@ module Binance
         { name: :account_info, client: :signed,
           action: :get, endpoint: :account },
         # #my_trades
-        { name: :my_trades, client: :signed,
-          action: :get, endpoint: :my_trades },
+        { name: :my_trades, client: :signed, action: :get, endpoint: :my_trades },
         # #listen_key
-        { name: :listen_key, client: :verified,
-          action: :post, endpoint: :user_data_stream },
+        { name: :listen_key, client: :verified, action: :post, endpoint: :user_data_stream },
         # #keep_alive_stream!
-        { name: :keep_alive_stream!, client: :verified,
-          action: :put, endpoint: :user_data_stream },
+        { name: :keep_alive_stream!, client: :verified, action: :put, endpoint: :user_data_stream },
         # #close_stream!
-        { name: :close_stream!, client: :verified,
-          action: :delete, endpoint: :user_data_stream },
+        { name: :close_stream!, client: :verified, action: :delete, endpoint: :user_data_stream },
 
         # Withdraw API Methods
         # #withdraw!
@@ -112,12 +108,16 @@ module Binance
         { name: :fapiOpenOrders, client: :signed, action: :get, endpoint: :fapiOpenOrders },
         { name: :fapiAllOrders, client: :signed, action: :get, endpoint: :fapiAllOrders },
 
+        { name: :fapiFundingRate, client: :verified, action: :get, endpoint: :fapiFundingRate },
+        { name: :fapiPremiumIndex, client: :verified, action: :get, endpoint: :fapiPremiumIndex },
+
         { name: :fapiLeverage, client: :verified, action: :post, endpoint: :fapiLeverage },
         { name: :fapiMarginType, client: :verified, action: :post, endpoint: :fapiMarginType },
         { name: :fapiMarkPriceKlines, client: :verified, action: :get, endpoint: :fapiMarkPriceKlines },
         { name: :fapiIndexPriceKlines, client: :verified, action: :get, endpoint: :fapiIndexPriceKlines },
         { name: :fapiKlines, client: :verified, action: :get, endpoint: :fapiKlines },
-        { name: :fapiContinuousKlines, client: :verified, action: :get, endpoint: :fapiContinuousKlines }
+        { name: :fapiContinuousKlines, client: :verified, action: :get, endpoint: :fapiContinuousKlines },
+        { name: :fapiListenKey, client: :verified, action: :post, endpoint: :fapiListenKey }
       ].freeze
     end
   end

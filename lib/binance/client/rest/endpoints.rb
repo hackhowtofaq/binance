@@ -45,19 +45,24 @@ module Binance
         fapiOrder:                       'fapi/v1/order',          # POST
         fapiQueryOrder:                  'fapi/v1/order',          # GET
         fapiCancelOrder:                 'fapi/v1/order',          # DELETE
-        fapiCancelAllOpenOrders:         'fapi/v1/allOpenOrders',  # DELETE   
+        fapiCancelAllOpenOrders:         'fapi/v1/allOpenOrders',  # DELETE
         fapiPositionRisk:                'fapi/v2/positionRisk',   # GET
         fapiBalance:                     'fapi/v2/balance',        # GET
         fapiAccount:                     'fapi/v2/account',        # GET
         fapiOpenOrders:                  'fapi/v1/openOrders', # GET
         fapiAllOrders:                   'fapi/v1/allOrders', # GET
 
+        fapiFundingRate:                 'fapi/v1/fundingRate', # GET
+        fapiPremiumIndex:                'fapi/v1/premiumIndex', # GET
+
         fapiLeverage:                    'fapi/v1/leverage',       # POST
         fapiMarginType:                  'fapi/v1/marginType',     # POST
         fapiMarkPriceKlines:             'fapi/v1/markPriceKlines', # GET
         fapiIndexPriceKlines:            'fapi/v1/indexPriceKlines',
         fapiKlines:                      'fapi/v1/klines',
-        fapiContinuousKlines:            'fapi/v1/continuousKlines'
+        fapiContinuousKlines:            'fapi/v1/continuousKlines',
+
+        fapiListenKey:                   'fapi/v1/listenKey' # POST
 
 
       }.freeze

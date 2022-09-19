@@ -5,7 +5,15 @@ module Binance
     # Public: Client with methods mirroring the Binance WebSocket API
     class WebSocket
       # Public: String base url for WebSocket client to use
-      BASE_URL = 'wss://stream.binance.com:9443'.freeze
+      # BASE_URL      = 'wss://stream.binance.com:9443'.freeze
+
+      def initialize(stream_type: :spot)
+        @base_url = if stream_type == :futures
+                      'wss://fstream.binance.com'.freeze
+                    else
+                      'wss://stream.binance.com:9443'.freeze
+                    end
+      end
 
       # Public: Create a single WebSocket stream
       #
@@ -22,7 +30,12 @@ module Binance
       #   :error   - The Proc called when a stream receives an error (optional)
       #   :close   - The Proc called when a stream is closed (optional)
       def single(stream:, methods:)
-        create_stream("#{BASE_URL}/ws/#{stream_url(stream)}",
+        create_stream("#{@base_url}/ws/#{stream_url(stream)}",
+                      methods: methods)
+      end
+
+      def singleFutures(stream:, methods:)
+        create_stream("#{@base_url}/ws/#{futuresStreamUrl(stream)}",
                       methods: methods)
       end
 
@@ -43,7 +56,7 @@ module Binance
       #   :close   - The Proc called when a stream is closed (optional)
       def multi(streams:, methods:)
         names = streams.map { |stream| stream_url(stream) }
-        create_stream("#{BASE_URL}/stream?streams=#{names.join('/')}",
+        create_stream("#{@base_url}/stream?streams=#{names.join('/')}",
                       methods: methods)
       end
 
@@ -90,7 +103,7 @@ module Binance
       #   :error   - The Proc called when a stream receives an error (optional)
       #   :close   - The Proc called when a stream is closed (optional)
       def kline(symbol:, interval:, methods:)
-        single stream: { symbol: symbol, type: 'kline', interval: interval },
+        single stream:  { symbol: symbol, type: 'kline', interval: interval },
                methods: methods
       end
 
@@ -134,7 +147,7 @@ module Binance
       #   :error   - The Proc called when a stream receives an error (optional)
       #   :close   - The Proc called when a stream is closed (optional)
       def partial_book_depth(symbol:, level:, methods:)
-        single stream: { symbol: symbol, type: 'depth', level: level },
+        single stream:  { symbol: symbol, type: 'depth', level: level },
                methods: methods
       end
 
@@ -152,6 +165,20 @@ module Binance
         single stream: { symbol: symbol, type: 'depth' }, methods: methods
       end
 
+      # Public: Create an Liquidation Order Streams
+      #
+      # :symbol - The String symbol the stream will listen to
+      #
+      # :methods - The Hash which contains the event handler methods to pass to
+      #            the WebSocket client
+      #   :open    - The Proc called when a stream is opened (optional)
+      #   :message - The Proc called when a stream receives a message
+      #   :error   - The Proc called when a stream receives an error (optional)
+      #   :close   - The Proc called when a stream is closed (optional)
+      def forceOrder(symbol:, methods:)
+        single stream: { symbol: symbol, type: 'forceOrder' }, methods: methods
+      end
+
       # Public: Create a User Data stream
       #
       # listen_key - The String key the stream will listen to, attained by
@@ -164,7 +191,7 @@ module Binance
       #   :error   - The Proc called when a stream receives an error (optional)
       #   :close   - The Proc called when a stream is closed (optional)
       def user_data(listen_key:, methods:)
-        create_stream "#{BASE_URL}/ws/#{listen_key}", methods: methods
+        create_stream "#{@base_url}/ws/#{listen_key}", methods: methods
       end
 
       private
@@ -177,6 +204,15 @@ module Binance
       # :interval - The String interval to use for the kline stream (optional)
       def stream_url(symbol:, type:, level: '', interval: '')
         "#{symbol.downcase}@#{type}".tap do |url|
+          url << level
+          url << "_#{interval}" unless interval.empty?
+        end
+      end
+
+      def futuresStreamUrl(symbol:, type:, level: '', interval: '')
+        contract_type = "perpetual"
+
+        "#{symbol.downcase}_#{contract_type}@#{type}".tap do |url|
           url << level
           url << "_#{interval}" unless interval.empty?
         end
@@ -209,8 +245,8 @@ module Binance
       #   :close   - The Proc called when a stream is closed (optional)
       def attach_methods(url, ws, methods)
         methods.each_pair do |key, method|
-          ws.on(key) { |event| 
-            method.call(event) 
+          ws.on(key) { |event|
+            method.call(event)
 
 
             if event.type == "close"
@@ -223,15 +259,15 @@ module Binance
               puts "event:  #{event} #{event.class}"
               puts "event:  #{event.type} #{event.type.class}"
               puts "#{endpoint.host} #{endpoint.port}"
-              #puts "#{ws}"
+              # puts "#{ws}"
 
               puts "!!! ================"
-              # Debug 
+              # Debug
               puts "!!! ================"
               puts "Reconnect test"
               puts "!!! ================"
               puts url
-              #puts EventMachine::reconnect(endpoint.host, endpoint.port, self)
+              # puts EventMachine::reconnect(endpoint.host, endpoint.port, self)
 
               # ws.post_init
             end

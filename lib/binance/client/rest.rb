@@ -58,8 +58,7 @@ module Binance
       end
 
       def camelize(str)
-        str.split('_')
-           .map.with_index { |word, i| i.zero? ? word : word.capitalize }.join
+        str.split('_').map.with_index { |word, i| i.zero? ? word : word.capitalize }.join
       end
     end
   end
