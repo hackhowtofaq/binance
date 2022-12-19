@@ -197,7 +197,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/hackho
 
 ## Buy me a LAMBO
 
-Use my ref code for 10% discount [Binance](https://www.binance.com/en/register?ref=UX5OQLL4 )
+Use my ref code for 10% discount [Binance](https://accounts.binance.com/en/register?ref=46438150)
 
 To the moon? Buy me a LAMBO
 
