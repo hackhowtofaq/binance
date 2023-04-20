@@ -117,7 +117,8 @@ module Binance
         { name: :fapiIndexPriceKlines, client: :verified, action: :get, endpoint: :fapiIndexPriceKlines },
         { name: :fapiKlines, client: :verified, action: :get, endpoint: :fapiKlines },
         { name: :fapiContinuousKlines, client: :verified, action: :get, endpoint: :fapiContinuousKlines },
-        { name: :fapiListenKey, client: :verified, action: :post, endpoint: :fapiListenKey }
+        { name: :fapiListenKey, client: :verified, action: :post, endpoint: :fapiListenKey },
+        { name: :fapiServerTime, client: :verified, action: :get, endpoint: :fapiServerTime }
       ].freeze
     end
   end

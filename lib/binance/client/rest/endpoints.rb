@@ -62,7 +62,8 @@ module Binance
         fapiKlines:                      'fapi/v1/klines',
         fapiContinuousKlines:            'fapi/v1/continuousKlines',
 
-        fapiListenKey:                   'fapi/v1/listenKey' # POST
+        fapiListenKey:                   'fapi/v1/listenKey', # POST
+        fapiServerTime:                  'fapi/v1/time' # GET
 
 
       }.freeze
