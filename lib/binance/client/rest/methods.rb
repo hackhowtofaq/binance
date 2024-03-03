@@ -107,11 +107,11 @@ module Binance
         { name: :fapiAccount, client: :signed, action: :get, endpoint: :fapiAccount },
         { name: :fapiOpenOrders, client: :signed, action: :get, endpoint: :fapiOpenOrders },
         { name: :fapiAllOrders, client: :signed, action: :get, endpoint: :fapiAllOrders },
+        { name: :fapiLeverage, client: :signed, action: :post, endpoint: :fapiLeverage },
 
         { name: :fapiFundingRate, client: :verified, action: :get, endpoint: :fapiFundingRate },
         { name: :fapiPremiumIndex, client: :verified, action: :get, endpoint: :fapiPremiumIndex },
 
-        { name: :fapiLeverage, client: :verified, action: :post, endpoint: :fapiLeverage },
         { name: :fapiMarginType, client: :verified, action: :post, endpoint: :fapiMarginType },
         { name: :fapiMarkPriceKlines, client: :verified, action: :get, endpoint: :fapiMarkPriceKlines },
         { name: :fapiIndexPriceKlines, client: :verified, action: :get, endpoint: :fapiIndexPriceKlines },
