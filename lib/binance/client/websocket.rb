@@ -35,7 +35,7 @@ module Binance
       end
 
       def singleFutures(stream:, methods:)
-        create_stream("#{@base_url}/ws/#{futuresStreamUrl(stream)}",
+        create_stream("#{@base_url}/ws/#{futuresStreamUrl(stream:)}",
                       methods: methods)
       end
 
@@ -212,26 +212,21 @@ module Binance
         end
       end
 
-      def futuresStreamUrl(symbol:, type:, level: '', interval: '')
+      def futuresStreamUrl(stream:)
+        symbol = stream[:symbol]
+        type   = stream[:type]
+        interval = stream[:interval]
         contract_type = "perpetual"
 
-        "#{symbol.downcase}_#{contract_type}@#{type}".tap do |url|
-          url << level
+        # "#{symbol.downcase}_#{contract_type}@#{type}".tap do |url|
+        "#{symbol.downcase}@#{type}".tap do |url|
+          # url << level
           url << "_#{interval}" unless interval.empty?
         end
       end
 
-      def futuresKline(stream:, interval:)
-        symbol = stream[:symbol]
-        type   = stream[:type]
-        contract_type = "perpetual"
-
-        "#{symbol.downcase}_#{contract_type}@#{type}".tap do |url|
-          url << level
-          url << "_#{interval}" unless interval.empty?
-        end
-
-        create_stream("#{@base_url}/ws/#{futuresStreamUrl(stream)}",
+      def futuresKline(stream:, methods:)
+        create_stream("#{@base_url}/ws/#{futuresStreamUrl(stream:)}",
                 methods:)
       end
 
