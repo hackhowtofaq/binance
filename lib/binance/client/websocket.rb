@@ -221,6 +221,20 @@ module Binance
         end
       end
 
+      def futuresKline(stream:, interval:)
+        symbol = stream[:symbol]
+        type   = stream[:type]
+        contract_type = "perpetual"
+
+        "#{symbol.downcase}_#{contract_type}@#{type}".tap do |url|
+          url << level
+          url << "_#{interval}" unless interval.empty?
+        end
+
+        create_stream("#{@base_url}/ws/#{futuresStreamUrl(stream)}",
+                methods:)
+      end
+
       # Internal: Initialize and return a Faye::WebSocket::Client
       #
       # url - The String url that the WebSocket should try to connect to
